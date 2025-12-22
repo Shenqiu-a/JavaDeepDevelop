@@ -1,0 +1,75 @@
+Spring 启动过程
+加载配置文件，初始化容器
+实例化容器，加载容器中的BeanDefinitions
+解析BeanDefinitions
+实例化Bean，交给容器管理
+注入依赖
+处理Bean生命周期初始化方法
+处理BeanPostProcessers（AOP代理也在这个阶段生成）
+发布事件（比如一些启动事件）
+完成启动
+
+
+Bean的生命周期
+实例化Bean
+属性注入
+初始化	-- 初始化前，可以通过BeanPostProcesser接口进行一些额外处理
+		-- 初始化
+		-- 初始化后，可以通过BeanPostProcessor接口进行进一步的处理
+使用
+销毁
+
+
+Bean的作用域
+单例，原型
+request，session，application，websocket
+
+
+volatile关键字
+可见性，禁止指令重排序
+（单例的双重检查锁定，避免未完全初始化的对象被使用）
+不能保证原子性
+
+
+Spring重要模块
+Core Container（Spring Core，Spring Beans，Spring context，Spring Expression Language），AOP，
+Data Access（Spring JDBC，Spring ORM，Spring Transaction），
+Web层（Spring Web，Spring MVC，Spring WebFlux）
+
+
+垃圾回收算法
+标记清除，标记整理，标记复制
+
+
+JVM运行时数据区
+方法区，堆（线程共享的对象或者方法，垃圾回收的区域【Eden，Survivor，Old】），虚拟机栈（线程私有，局部变量），本地方法栈，程序计数器
+
+
+逃逸分析
+线程逃逸，方法逃逸
+栈上分配，标量替换，同步消除
+
+
+四种引用
+强引用：默认情况下，任何普通对象的引用都是强引用，不会被回收
+软引用：用来描述一些还有用但非必须的对象，内存不足时会回收
+弱引用：只要垃圾回收器发现弱引用对象，那么就会直接回收
+虚引用：如同没有引用一样，随时会被回收，主要用于跟踪对象的垃圾回收状态
+
+
+垃圾回收器
+新生代：ParNew，Serial
+老年代：CMS，G1
+
+
+判断是否需要回收
+引用计数
+根可达分析（三色标记算法）
+
+
+MVCC
+undo log，事务id，指向undo log的指针
+
+
+
+
