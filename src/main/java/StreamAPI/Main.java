@@ -21,7 +21,7 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
         Integer retryCount = 4;
-        String maxRetryCount = "5";
+        String maxRetryCount = "6";
         String lockTime = "10";
         if (retryCount >= Integer.valueOf(maxRetryCount).intValue())
         {
