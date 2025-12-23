@@ -16,6 +16,9 @@ public class doubaoPhone {
                 doubaoPhone.class.getClassLoader(),
                 new Class[]{orderFood.class},
                 new InvocationHandler() {
+                    /// proxy:代理对象
+                    /// method:被代理的方法
+                    /// args:方法参数数组
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                         // 用反射调用方法
