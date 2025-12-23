@@ -9,4 +9,11 @@ import java.util.List;
 public interface myFeign {
     @RequestLine("GET /users?name={name}")
     List<String> getAll(@Param("name") String name);
+
+    @RequestLine("POST /users/add?name={name}")
+    void addUserName(@RequestBody String name);
+
+    @RequestLine("POST /users/delete?name={name}")
+    void deleteUserName(@RequestBody String name);
+
 }

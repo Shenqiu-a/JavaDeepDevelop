@@ -16,10 +16,6 @@ public class Main {
 
         myFeign myFeign = Feign.builder().target(myFeign.class, "http://localhost:8080/");
 
-        // 查看目标类
-        System.out.println("apiType is : " + myFeign.class);
-        System.out.println("apiType is : " + myFeign.getClass());
-
         List<String> names = myFeign.getAll("yml");
         for (int i = 0; i < names.toArray().length; i++) {
             System.out.println("names[" + i  + "] is "+ names.get(i));
