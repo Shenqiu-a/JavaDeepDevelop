@@ -2,10 +2,13 @@ package Feign;
 
 import feign.Param;
 import feign.RequestLine;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
+// value 指定服务名称
+@FeignClient(value = "my-feign")
 public interface myFeign {
     @RequestLine("GET /users?name={name}")
     List<String> getAll(@Param("name") String name);

@@ -1,6 +1,7 @@
 package Feign;
 
 import feign.Feign;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * 日期：2025/12/2216:16
  */
 
+@EnableFeignClients
 public class Main {
     public static void main(String[] args) {
 
