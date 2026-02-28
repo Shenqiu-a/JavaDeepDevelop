@@ -25,6 +25,21 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <version>3.1.9</version>
         </dependency>
+
+        <!--    @Data注解    -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+        </dependency>
+
+        <!--    数据库驱动    -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version> <!-- 适配你的MySQL版本 -->
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
 </project>
