@@ -1,5 +1,8 @@
 package Basic;
 
+
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Map;
 import java.util.HashMap;
 
@@ -9,8 +12,10 @@ import java.util.HashMap;
  * 日期：2026/2/2815:01
  */
 
+@Slf4j
 public class AboutHashMap {
     public static void main(String[] args) {
+        log.info("HashMap测试");
         Map<String, String> map = new HashMap<>();
         map.put("key1", "value1");
         map.put("key2", "value2");

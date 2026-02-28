@@ -26,6 +26,19 @@
             <version>3.1.9</version>
         </dependency>
 
+        <!-- 在这第一次导入是为了使用其中集成的log.info  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.3.4</version>
+        </dependency>
+        <!-- 添加SLF4J具体实现 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.18</version>
+        </dependency>
+
         <!--    @Data注解    -->
         <dependency>
             <groupId>org.projectlombok</groupId>
