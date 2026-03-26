@@ -53,6 +53,13 @@
             <version>8.0.30</version> <!-- 适配你的MySQL版本 -->
             <scope>runtime</scope>
         </dependency>
+
+        <!--    Open AI 的依赖    -->
+        <dependency>
+            <groupId>com.openai</groupId>
+            <artifactId>openai-java</artifactId>
+            <version>4.0.0</version>
+        </dependency>
     </dependencies>
 
 </project>
