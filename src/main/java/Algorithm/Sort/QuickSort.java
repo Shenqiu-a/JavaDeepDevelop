@@ -1,0 +1,45 @@
+package Algorithm.Sort;
+
+import java.util.*;
+
+import static org.apache.commons.lang3.ArrayUtils.swap;
+
+/**
+ * 功能：
+ * 作者：yml
+ * 日期：2026/7/711:14
+ */
+
+public class QuickSort {
+    public static void main(String[] args) {
+        int[] arr = {6, 3, 7, 0, 1, 4, 5, 6};
+        System.out.println("排序前: " + Arrays.toString(arr));
+
+        quickSort(arr, 0, arr.length - 1);
+
+        System.out.println("排序后: " + Arrays.toString(arr));
+    }
+
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pivotIndex = partition(arr, low, high);
+
+            quickSort(arr, low, pivotIndex - 1);
+
+            quickSort(arr, pivotIndex + 1, high);
+        }
+    }
+
+    private static int partition(int[] arr, int low, int high) {
+        int i = low - 1;
+
+        for (int j = low; j < high; j++) {
+            if(arr[j] < arr[high]) {
+                swap(arr, ++i, j);
+            }
+        }
+        swap(arr, i + 1, high);
+        return i+1;
+    }
+
+}
