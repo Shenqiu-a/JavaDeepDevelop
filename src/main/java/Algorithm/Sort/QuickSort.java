@@ -11,6 +11,8 @@ import static org.apache.commons.lang3.ArrayUtils.swap;
  */
 
 public class QuickSort {
+    static int k = 0;
+
     public static void main(String[] args) {
         int[] arr = {6, 3, 7, 0, 1, 4, 5, 6};
         System.out.println("排序前: " + Arrays.toString(arr));
@@ -40,6 +42,21 @@ public class QuickSort {
         }
         swap(arr, i + 1, high);
         return i+1;
+    }
+
+    private static int partition2(int[] arr, int low, int high) {
+        int i = low;
+
+        for (int j = low; j < high; j++) {
+            if(arr[j] < arr[high]) {
+                swap(arr, i, j);
+                i++;
+                System.out.println("第"+ k++ +"次排序后:" + Arrays.toString(arr) + "\n");
+            }
+        }
+        swap(arr, i, high);
+        System.out.println("第"+ k++ +"次排序后:" + Arrays.toString(arr) + "i = " + (i) + "\n");
+        return i;
     }
 
 }
