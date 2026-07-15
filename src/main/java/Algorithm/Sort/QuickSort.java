@@ -1,5 +1,7 @@
 package Algorithm.Sort;
 
+import org.apache.commons.lang3.RandomUtils;
+
 import java.util.*;
 
 import static org.apache.commons.lang3.ArrayUtils.swap;
@@ -24,7 +26,7 @@ public class QuickSort {
 
     public static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
-            int pivotIndex = partition(arr, low, high);
+            int pivotIndex = partition3(arr, low, high);
 
             quickSort(arr, low, pivotIndex - 1);
 
@@ -59,4 +61,19 @@ public class QuickSort {
         return i;
     }
 
+    private static int partition3(int[] arr, int low, int high) {
+        int i = low;
+        swap(arr, high, RandomUtils.nextInt(low, high));
+        System.out.println("random element is : " + arr[high]);
+        for (int j = low; j < high; j++) {
+            if(arr[j] < arr[high]) {
+                swap(arr, i, j);
+                i++;
+                System.out.println("第"+ k++ +"次排序后:" + Arrays.toString(arr) + "\n");
+            }
+        }
+        swap(arr, high, i);
+        System.out.println("第"+ k++ +"次排序后:" + Arrays.toString(arr) + "i = " + (i) + "\n");
+        return i;
+    }
 }
