@@ -1,27 +1,19 @@
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.SystemUtils;
 
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
 
 @Slf4j
 public class Temp {
+    private static final ZoneId zoneId = ZoneId.of("Asia/Shanghai");
+
+    private static final Clock clock = Clock.fixed(Instant.parse("2026-11-18T02:00:00Z"), ZoneOffset.UTC);
     public static void main(String[] args) {
-
-        ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
-
-        map.put("1", "1");
-        map.put("2", "2");
-        map.put("3", "3");
-
-        log.info("map is {}", map);
-
-        log.error("error log");
-
-        log.warn("warn log");
-
-        if (log.isDebugEnabled()) {
-            log.debug("Current log level is Debug!");
-        }
-
+        Clock fixed = Clock.fixed(Instant.now(), ZoneOffset.UTC);
+        OffsetDateTime offsetDateTime = fixed.instant().atZone(zoneId).toOffsetDateTime();
+        log.info("offsetDateTime is : {}",offsetDateTime);
     }
 }
